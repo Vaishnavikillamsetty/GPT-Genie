@@ -30,7 +30,6 @@ Error Handling — Displays helpful messages for incorrect or missing setup.
 
 # 🌍 Live Demo
 
-> *(Once hosted via GitHub Pages, add your link here)*
 > [https://yourusername.github.io/gemini-api-chat-ui/](https://yourusername.github.io/gemini-api-chat-ui/)
 
 ---
@@ -44,18 +43,14 @@ Google Apps Script – Backend processing with Gemini API
 
 ---
 
-# 📸 Screenshot Preview
-
-> *(Insert screenshot of the live chat UI)*
-> ![screenshot](images/chat-ui-preview.jpg)
-
----
-
 # 👥 Team & Credits
 
 Developed by: Team Innovators (Vaishnavi Killamsetty & Team)
+
 Year: 2025
+
 GitHub: [Vaishnavi Killamsetty](https://github.com/vaishnavikillamsetty)
+
 LinkedIn: [Vaishnavi Killamsetty](https://www.linkedin.com/in/vaishnavi-killamsetty-bb0517314)
 
 ---
