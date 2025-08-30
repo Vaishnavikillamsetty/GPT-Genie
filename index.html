@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini API Chat</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">Chat with Gemini</h1>
+
+        <form id="geminiForm" class="space-y-6">
+            <div>
+                <label for="prompt" class="block text-lg font-medium text-gray-700 mb-2">Enter your prompt:</label>
+                <textarea
+                    id="prompt"
+                    name="prompt"
+                    rows="6"
+                    class="mt-1 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder-gray-400 resize-y"
+                    placeholder="Type your message here..."
+                    required
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                id="submitButton"
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:scale-105"
+            >
+                Send to Gemini
+            </button>
+        </form>
+
+        <div id="responseContainer" class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl shadow-inner hidden">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Gemini's Response:</h2>
+            <div id="geminiResponse" class="text-gray-700 leading-relaxed whitespace-pre-wrap"></div>
+            <div id="loadingIndicator" class="text-center text-indigo-500 font-medium mt-4 hidden">
+                <div class="flex items-center justify-center">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Generating response...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const geminiForm = document.getElementById('geminiForm');
+        const promptInput = document.getElementById('prompt');
+        const submitButton = document.getElementById('submitButton');
+        const responseContainer = document.getElementById('responseContainer');
+        const geminiResponseDiv = document.getElementById('geminiResponse');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        // ***************************************************************************************************
+        // IMPORTANT: YOU MUST REPLACE THE PLACEHOLDER BELOW WITH YOUR ACTUAL DEPLOYED GOOGLE APPS SCRIPT WEB APP URL.
+        // This URL is obtained AFTER you deploy your Google Apps Script (Code.gs) as a web app.
+        // It will look something like: 'https://script.google.com/macros/s/AKfycbz.../exec'
+        // ***************************************************************************************************
+        const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw7tnPV4lkdkyLEnbwjgdn6z4D-YlrXzvvI8iM5Xy8Wx2LxF7tFnnUD6Zo3GDCY1cI8Uw/exec';
+
+        geminiForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            const prompt = promptInput.value.trim();
+            if (!prompt) {
+                geminiResponseDiv.textContent = 'Please enter a prompt.';
+                responseContainer.classList.remove('hidden');
+                return;
+            }
+
+            // Clear previous response and show loading indicator
+            geminiResponseDiv.textContent = '';
+            responseContainer.classList.remove('hidden');
+            loadingIndicator.classList.remove('hidden');
+            submitButton.disabled = true; // Disable button during submission
+            submitButton.textContent = 'Sending...';
+
+            try {
+                // Check if the placeholder URL is still present or invalid
+                if (APPS_SCRIPT_WEB_APP_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE' || !APPS_SCRIPT_WEB_APP_URL.startsWith('http')) {
+                    throw new Error('Please update APPS_SCRIPT_WEB_APP_URL in the JavaScript code with your deployed Google Apps Script Web App URL. Refer to the comments in the code.');
+                }
+
+                const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'cors', // Required for cross-origin requests
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded', // Standard for form submissions
+                    },
+                    // Send the prompt as form data
+                    body: new URLSearchParams({ prompt: prompt }).toString(),
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorText}`);
+                }
+
+                const data = await response.json(); // Assuming Apps Script returns JSON
+
+                if (data.error) {
+                    geminiResponseDiv.textContent = `Error: ${data.error}`;
+                } else {
+                    geminiResponseDiv.textContent = data.response || 'No response received.';
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                geminiResponseDiv.textContent = `Failed to get response: ${error.message}. Please ensure the APPS_SCRIPT_WEB_APP_URL is correctly set and your Apps Script is deployed as a web app with 'Anyone' access.`;
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                submitButton.disabled = false; // Re-enable button
+                submitButton.textContent = 'Send to Gemini';
+            }
+        });
+    </script>
+</body>
+</html>
