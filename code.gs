@@ -1,5 +1,5 @@
 // Code.gs
-
+ 
 // IMPORTANT: Replace 'YOUR_GEMINI_API_KEY_HERE' with your actual Gemini API Key.
 // Get your API key from Google AI Studio: https://aistudio.google.com/app/apikey 
 const GEMINI_API_KEY = 'AIzaSyDeWyGw6qVghrhvyBS5BEY1Sa4-6ZmPnTU'; 
