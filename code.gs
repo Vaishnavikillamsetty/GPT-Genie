@@ -1,7 +1,7 @@
 // Code.gs
 
 // IMPORTANT: Replace 'YOUR_GEMINI_API_KEY_HERE' with your actual Gemini API Key.
-// Get your API key from Google AI Studio: https://aistudio.google.com/app/apikey
+// Get your API key from Google AI Studio: https://aistudio.google.com/app/apikey 
 const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE'; 
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
