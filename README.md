@@ -17,69 +17,29 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 
 ## 🖥️ Setup Guide
 
-### 1️⃣ Get a Gemini API Key
-
-1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
-2. Sign in with your Google account.
-3. Click **Create API Key** and copy it.
-4. Save this key securely — you’ll need it in the next step.
-
----
-
-### 2️⃣ Upload `Code.gs` to Google Apps Script
-
-1. Open [Google Apps Script](https://script.google.com/).
-2. Click **New Project**.
-3. Delete the default `Code.gs` file content.
-4. Copy the contents of **this repo’s `Code.gs`** file into the editor.
-5. Replace:
-
-   ```javascript
-   const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
-   ```
-
-   with your **actual Gemini API key** from step 1.
+### 1️⃣ Backend — Google Apps Script
+1. Open [Google Apps Script](https://script.google.com/).  
+2. Create a **New Project**.  
+3. Delete the default code in `Code.gs`.  
+4. Copy and paste the `Code.gs` file from this repo.  
+5. Deploy as a **Web App** → choose **Execute as: Me**, **Who has access: Anyone**.  
+6. Copy the **Web App URL**. (This is already added in the `index.html` file of this repo.)
 
 ---
 
-### 3️⃣ Deploy as a Web App
-
-1. In Apps Script, click **Deploy → New deployment**.
-2. Select **Web App**.
-3. Under *Execute as*, choose **Me**.
-4. Under *Who has access*, choose **Anyone**.
-5. Click **Deploy** and allow permissions.
-6. Copy the **Web App URL** (looks like `https://script.google.com/macros/s/.../exec`).
-
----
-
-### 4️⃣ Update `index.html`
-
-1. Open the `index.html` file from this repo.
-
-2. Find this line:
-
-   ```javascript
-   const APPS_SCRIPT_WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE';
-   ```
-
-3. Replace `'YOUR_WEB_APP_URL_HERE'` with the Web App URL you copied in step 3.
-
-4. Save the file.
-
----
-
-### 5️⃣ Run the App
-
-1. Open `index.html` in your browser.
-2. Enter a prompt and click **Send to Gemini**.
-3. See Gemini’s response in real-time 🎉.
+### 2️⃣ Frontend — VS Code
+1. Download or clone this repository.  
+2. Open the folder in **VS Code**.  
+3. Locate the `index.html` file.  
+4. Right-click → **Open with Live Server** (if you have Live Server extension installed)  
+   OR simply double-click `index.html` to open in your browser.  
+5. Start chatting with Gemini!
 
 ---
 
 ## 🌍 Live Demo
 
-👉 [Demo Link (GitHub Pages)](https://yourusername.github.io/GPT-Genie/)
+👉 https://vaishnavikillamsetty.github.io/GPT-Genie/
 
 ---
 
