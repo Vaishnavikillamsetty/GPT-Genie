@@ -49,7 +49,7 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 ### 4️⃣ Update `index.html`  
 1. Open the `index.html` file from this repo.  
 2. Find this line:  
-   const APPS_SCRIPT_WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE';
+   const APPS_SCRIPT_WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE';.
 3.Replace 'YOUR_WEB_APP_URL_HERE' with the Web App URL you copied in step 3.
 4.Save the file.
 
