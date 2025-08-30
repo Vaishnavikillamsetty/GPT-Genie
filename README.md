@@ -33,3 +33,62 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 4. Copy the contents of **this repo’s `Code.gs`** file into the editor.  
 5. Replace:  
    const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
+
+---
+
+### 3️⃣ Deploy as a Web App  
+1. In Apps Script, click **Deploy → New deployment**.  
+2. Select **Web App**.  
+3. Under *Execute as*, choose **Me**.  
+4. Under *Who has access*, choose **Anyone**.  
+5. Click **Deploy** and allow permissions.  
+6. Copy the **Web App URL** (looks like `https://script.google.com/macros/s/.../exec`).  
+
+---
+
+### 4️⃣ Update `index.html`  
+1. Open the `index.html` file from this repo.  
+2. Find this line:  
+   const APPS_SCRIPT_WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE';
+3.Replace 'YOUR_WEB_APP_URL_HERE' with the Web App URL you copied in step 3.
+4.Save the file.
+
+---
+
+### 5️⃣ Run the App
+1.Open index.html in your browser.
+2.Enter a prompt and click Send to Gemini.
+3.See Gemini’s response in real-time.
+
+---
+
+### Live Demo
+Demo Link**()**
+
+---
+
+### Built With
+**HTML** – Page structure
+**Tailwind CSS** – Styling & responsive layout
+**JavaScript** – Interaction logic & API integration
+**Google Apps Script** – Backend with Gemini API
+
+---
+
+### Team & Credits
+Developed by **Team Innovators (Vaishnavi Killamsetty & Team)**
+**Year**: 2025
+
+---
+
+### Future Improvements
+Add **voice input/output** support
+Support **multiple Gemini models** (creative, code, etc.)
+Enable **conversation history & saving**
+Improve **mobile-friendly responsiveness**
+
+---
+
+### License
+This project is open for **educational or personal use.**
+Please give credit to the original team if reused or modified.
