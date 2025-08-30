@@ -1,71 +1,35 @@
-# GPT-Genie
-A modern web chat interface using HTML, Tailwind CSS, and JavaScript to interact with Gemini API via Google Apps Script.
-Gemini API Chat UI is a clean and modern web application that allows users to interact with Google's Gemini API through a beautifully styled chat interface. Ideal for experimenting with prompts, generating content, or integrating AI in real-time, this app is lightweight, easy to deploy, and customizable.
+# GPT-Genie  
 
+A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to interact with the **Gemini API** via **Google Apps Script**.  
 
-
-
+*GPT-Genie provides a sleek and responsive UI that allows users to chat with Gemini in real-time. It’s lightweight, customizable, and easy to deploy — perfect for experimenting with prompts, generating content, or integrating AI into projects.*  
 
 ---
 
-# 📌 Project Features
+## Features  
 
-Prompt Input — Type your custom message or question for Gemini.
-Live Response — Fetches and displays answers from Gemini in real-time.
-Modern Design — Built with Tailwind CSS for a sleek and responsive UI.
-Loading Indicator — Shows response is being generated.
-Error Handling — Displays helpful messages for incorrect or missing setup.
-
----
-
-# 🖥️ How to Use
-
-1. Deploy your Google Apps Script Web App with Gemini API.
-2. Replace the placeholder `APPS_SCRIPT_WEB_APP_URL` in `index.html` with your web app URL.
-3. Open `index.html` in any browser.
-4. Type a prompt and click Send to Gemini.
-5. View Gemini's response in real-time.
+ **Prompt Input** — Type your custom message or question for Gemini.  
+ **Live Response** — Fetches and displays answers instantly.  
+ **Modern Design** — Built with Tailwind CSS for a clean and responsive UI.  
+ **Loading Indicator** — Shows when Gemini is generating a response.  
+ **Error Handling** — Clear error messages for missing/incorrect setup.  
 
 ---
 
-# 🌍 Live Demo
+## Setup Guide  
 
-> [https://yourusername.github.io/gemini-api-chat-ui/](https://yourusername.github.io/gemini-api-chat-ui/)
-
----
-
-# 🛠️ Built With
-
-HTML – Page structure
-Tailwind CSS – Styling and layout
-JavaScript – API integration and interaction logic
-Google Apps Script – Backend processing with Gemini API
+### 1️⃣ Get a Gemini API Key  
+1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey).  
+2. Sign in with your Google account.  
+3. Click **Create API Key** and copy it.  
+4. Save this key securely — you’ll need it in the next step.  
 
 ---
 
-# 👥 Team & Credits
-
-Developed by: Team Innovators (Vaishnavi Killamsetty & Team)
-
-Year: 2025
-
-GitHub: [Vaishnavi Killamsetty](https://github.com/vaishnavikillamsetty)
-
-LinkedIn: [Vaishnavi Killamsetty](https://www.linkedin.com/in/vaishnavi-killamsetty-bb0517314)
-
----
-
-# 🚀 Future Improvements
-
-* Add voice input/output support
-* Connect to multiple Gemini models (creative, code, etc.)
-* Support conversation history and saving
-* Responsive mobile-friendly layout
-
----
-
-# 📃 License
-
-This project is open for educational or personal use. Please credit the original team if reused or modified.
-
----
+### 2️⃣ Upload `Code.gs` to Google Apps Script  
+1. Open [Google Apps Script](https://script.google.com/).  
+2. Click **New Project**.  
+3. Delete the default `Code.gs` file content.  
+4. Copy the contents of **this repo’s `Code.gs`** file into the editor.  
+5. Replace:  
+   const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
