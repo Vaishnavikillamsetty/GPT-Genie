@@ -7,11 +7,11 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 
 ## 📌 Features
 
-* 📝 Prompt Input — Type your custom message or question for Gemini.
-* ⚡ Live Response — Fetches and displays answers instantly.
-* 🎨 Modern Design — Built with Tailwind CSS for a clean and responsive UI.
-* ⏳ Loading Indicator — Shows when Gemini is generating a response.
-* 🛡️ Error Handling — Clear error messages for missing/incorrect setup.
+* Prompt Input — Type your custom message or question for Gemini.
+* Live Response — Fetches and displays answers instantly.
+* Modern Design — Built with Tailwind CSS for a clean and responsive UI.
+* Loading Indicator — Shows when Gemini is generating a response.
+* Error Handling — Clear error messages for missing/incorrect setup.
 
 ---
 
@@ -85,10 +85,10 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 
 ## 🛠️ Built With
 
-* ⚛️ **HTML** – Page structure
-* 🎨 **Tailwind CSS** – Styling & responsive layout
-* 🧩 **JavaScript** – Interaction logic & API integration
-* ☁️ **Google Apps Script** – Backend with Gemini API
+* **HTML** – Page structure
+* **Tailwind CSS** – Styling & responsive layout
+* **JavaScript** – Interaction logic & API integration
+* **Google Apps Script** – Backend with Gemini API
 
 ---
 
@@ -104,14 +104,14 @@ A **modern web chat interface** using **HTML, Tailwind CSS, and JavaScript** to 
 
 ## 🚀 Future Improvements
 
-* 🎤 Add **voice input/output** support
-* 🤖 Support **multiple Gemini models** (creative, code, etc.)
-* 💾 Enable **conversation history & saving**
-* 📱 Improve **mobile-friendly responsiveness**
+* Add **voice input/output** support
+* Support **multiple Gemini models** (creative, code, etc.)
+* Enable **conversation history & saving**
+* Improve **mobile-friendly responsiveness**
 
 ---
 
-## 📃 License
+## License
 
 This project is open for **educational or personal use**.
 Please give credit to the original team if reused or modified.
